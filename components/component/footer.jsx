@@ -1,89 +1,7 @@
-"use client";
-
-import { useState } from "react";
-import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Logo from "../../public/logo.png";
-import lwizara from "../../public/logo-wizara.png";
-import Rachik from "../../public/Rachik.jpeg";
-import fsbm from "../../public/fsbm.jpg";
-import bgd from "../../public/bgD.jpg";
-import snrst from "../../public/snrst.jpg";
-import univ from "../../public/universite.jpg";
 import Image from "next/image";
-import "./landing.css";
-import Component from "../component/component";
-import Team from "../component/team";
-import Time from "@/components/time-horizontale/time";
-import Partenaire from "@/components/partenaire/Partenaire";
-import Teastimonial from "../component/Teastimonial";
-const navigation = [
-  { name: "Acceuil", href: "#" },
-  { name: "Comités", href: "#" },
-  { name: "Sujets", href: "#" },
-  { name: "Dates importantes", href: "#" },
-  { name: "Programe", href: "#" },
-];
-const timeline = [
-  {
-    name: "Founded company",
-    description:
-      "Nihil aut nam. Dignissimos a pariatur et quos omnis. Aspernatur asperiores et dolorem dolorem optio voluptate repudiandae.",
-    date: "Aug 2021",
-    dateTime: "2021-08",
-  },
-  {
-    name: "Secured $65m in funding",
-    description:
-      "Provident quia ut esse. Vero vel eos repudiandae aspernatur. Cumque minima impedit sapiente a architecto nihil.",
-    date: "Dec 2021",
-    dateTime: "2021-12",
-  },
-  {
-    name: "Released beta",
-    description:
-      "Sunt perspiciatis incidunt. Non necessitatibus aliquid. Consequatur ut officiis earum eum quia facilis. Hic deleniti dolorem quia et.",
-    date: "Feb 2022",
-    dateTime: "2022-02",
-  },
-  {
-    name: "Global launch of product",
-    description:
-      "Ut ipsa sint distinctio quod itaque nam qui. Possimus aut unde id architecto voluptatem hic aut pariatur velit.",
-    date: "Dec 2022",
-    dateTime: "2022-12",
-  },
-];
-const jobOpenings = [
-  {
-    id: 1,
-    role: "Full-time designer",
-    href: "#",
-    description:
-      "Quos sunt ad dolore ullam qui. Enim et quisquam dicta molestias. Corrupti quo voluptatum eligendi autem labore.",
-    salary: "$75,000 USD",
-    location: "San Francisco, CA",
-  },
-  {
-    id: 2,
-    role: "Laravel developer",
-    href: "#",
-    description:
-      "Et veniam et officia dolorum rerum. Et voluptas consequatur magni sapiente amet voluptates dolorum. Ut porro aut eveniet.",
-    salary: "$125,000 USD",
-    location: "San Francisco, CA",
-  },
-  {
-    id: 3,
-    role: "React Native developer",
-    href: "#",
-    description:
-      "Veniam ipsam nisi quas architecto eos non voluptatem in nemo. Est occaecati nihil omnis delectus illum est.",
-    salary: "$105,000 USD",
-    location: "San Francisco, CA",
-  },
-];
-const footerNavigation = {
+
+const navigation = {
   solutions: [
     { name: "Marketing", href: "#" },
     { name: "Analytics", href: "#" },
@@ -174,54 +92,114 @@ const footerNavigation = {
 };
 
 export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
-    <div className="bg-white">
-      {/* Header */}
+    <footer className="bg-white mt-12" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" className="sr-only">
+        Footer
+      </h2>
+      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div className="space-y-8">
+            <Image
+              className="h-[100px] w-[130px]"
+              src={Logo}
+              alt="Company name"
+            />
 
-      <main className="isolate">
-        {/* Hero section */}
-        <div className="relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
-          <div
-            className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
-            aria-hidden="true"
-          />
-          <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-              <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto">
-                En honneur de mme Nawal Sail
-              </h1>
-              <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
-                <p className="text-lg leading-8 text-gray-600">
-                  Le Laboratoire d’Analyse, Modélisation et Simulation en
-                  coopération avec le laboratoire Technologie de l’Information
-                  et Modélisation sont honoré de convier la communauté
-                  scientifique aux Journées Internationales des Sciences de
-                  l’Ingénieur et de l’Intelligence Artificielle (JSIIA 2024),
-                  qui se tiendront à la Faculté des Sciences Ben M’Sik du 06 au
-                  08 juin 2024.
-                </p>
-              </div>
-              <Image
-                src={Rachik}
-                alt="Rachik"
-                className="mt-10 aspect-[6/5] w-[450px] h-[500px] max-w-lg rounded-2xl sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2  rachik"
-              />
+            <div className="flex space-x-6">
+              {navigation.social.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-400 hover:text-gray-500"
+                >
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon className="h-6 w-6" aria-hidden="true" />
+                </a>
+              ))}
             </div>
           </div>
-          <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32" />
+          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                  Solutions
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.solutions.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-10 md:mt-0">
+                <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                  Support
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.support.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                  Company
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.company.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-10 md:mt-0">
+                <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                  Legal
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.legal.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <Partenaire />
-
-        <Component />
-
-        <Team />
-
-        <Time />
-
-        <Teastimonial />
-      </main>
-    </div>
+        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+          <p className="text-xs leading-5 text-gray-500">
+            &copy; 2020 Your Company, Inc. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 }
